@@ -4,4 +4,20 @@ where id = 5;
 
 update employee
  set address = 'some'
- default address = "null"
+ default address = "null";
+
+
+
+SELECT COUNT(*) FROM employee;
+
+
+
+SELECT * FROM employee
+WHERE age < 20;
+
+
+SELECT DISTINCT firstname,lastname FROM employee;
+
+update employee
+ set firstname = 'Neil'
+ where firstname = "Noah";
