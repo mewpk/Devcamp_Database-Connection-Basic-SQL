@@ -1,11 +1,11 @@
 const express = require('express');
-const mysql = require('mysql');
+const mysql = require('mysql2');
 const app = express();
 app.get('/api/users', (req, res) => {
     const connection = mysql.createConnection({
         host: 'localhost',
         user: 'root', // <== ระบุใหถูกตอง
-        password: '1234', // <== ระบุใหถูกตอง
+        // password: 'YES', // <== ระบุใหถูกตอง
         database: 'codecamp',
     });
     // เปด connection ไปที่ database
