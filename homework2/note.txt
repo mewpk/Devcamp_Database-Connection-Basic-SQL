@@ -1,0 +1,7 @@
+delete from employee
+where id = 5;
+
+
+update employee
+ set address = 'some'
+ default address = "null"
