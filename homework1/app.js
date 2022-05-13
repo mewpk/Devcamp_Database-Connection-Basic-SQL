@@ -1,12 +1,12 @@
 const express = require('express');
 const mysql = require('mysql2');
 const app = express();
-app.get('/api/users', (req, res) => {
+app.get('/api/saleitems', (req, res) => {
     const connection = mysql.createConnection({
         host: 'localhost',
         user: 'root', // <== ระบุใหถูกตอง
-        // password: 'YES', // <== ระบุใหถูกตอง
-        database: 'codecamp',
+         password: '1234', // <== ระบุใหถูกตอง
+        database: 'storebook',
     });
     // เปด connection ไปที่ database
     connection.connect();
@@ -23,8 +23,8 @@ app.get('/api/books', (req, res) => {
     const connection = mysql.createConnection({
         host: 'localhost',
         user: 'root', // <== ระบุใหถูกตอง
-        // password: 'YES', // <== ระบุใหถูกตอง
-        database: 'codecamp',
+        password: '1234', // <== ระบุใหถูกตอง
+        database: 'storebook',
     });
     // เปด connection ไปที่ database
     connection.connect();
@@ -41,8 +41,8 @@ app.get('/api/employees', (req, res) => {
     const connection = mysql.createConnection({
         host: 'localhost',
         user: 'root', // <== ระบุใหถูกตอง
-        // password: 'YES', // <== ระบุใหถูกตอง
-        database: 'codecamp',
+        password: '1234', // <== ระบุใหถูกตอง
+        database: 'storebook',
     });
     // เปด connection ไปที่ database
     connection.connect();
@@ -66,7 +66,7 @@ app.listen(3000, () => {
 //     age int,
 //     created_at timestamp default now(),
 //     primary key (id),
-//     unique (firstname)
+//     unique (lastname)
 //     );
 
 
@@ -79,3 +79,27 @@ app.listen(3000, () => {
 //     primary key (ISBN),
 //     unique (ISBN)
 //     )
+
+// create table saleitems (
+//     ISBN varchar(13),
+//     id varchar(32),
+//     price int,
+//     items int,
+//     created_at timestamp default now(),
+//     primary key (ISBN),
+//     unique (ISBN)
+//     )
+
+// insert into employee (firstname, lastname, age) values
+// ('Noah', 'Armstrong', 34),
+// ('Leslie','Ellis',24),
+// ('Sandra', 'Hoffman', 35),
+// ('Cameron', 'Meyer', 19),
+// ('Cameron', 'Moore', 27);
+
+// insert into book (ISBN, name, price) values
+// ('9783598215933', 'The Marquis and I', 250),
+// ('9783598215957','Blood on the Tongue',352),
+// ('9783598215995', 'A Higher Loyalty', 157),
+// ('9783598215919', 'The Mars Room', 199),
+// ('9783598215766', 'His Toy', 289);
